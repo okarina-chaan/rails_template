@@ -12,6 +12,7 @@ RUN apt-get update -qq && \
     npm \
     libyaml-dev \
     pkg-config && \
+    npm install -g yarn && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 WORKDIR /rails
