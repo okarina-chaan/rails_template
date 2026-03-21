@@ -25,10 +25,12 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - .:/rails
+      - /rails/node_modules
     environment:
       RAILS_ENV: ${RAILS_ENV:-development}
       CHOKIDAR_USEPOLLING: "true"
-    command: bin/rails tailwindcss:watch
+    entrypoint: /rails/docker-entrypoint-css.sh
+    command: yarn build:css:watch
     tty: true
 
   js:
