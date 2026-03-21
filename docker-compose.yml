@@ -43,6 +43,7 @@ services:
     environment:
       RAILS_ENV: ${RAILS_ENV:-development}
       CHOKIDAR_USEPOLLING: "true"
+    entrypoint: /rails/docker-entrypoint-js.sh
     command: yarn build:watch
     tty: true
 
